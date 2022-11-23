@@ -54,6 +54,8 @@ CIRCUIT DIAGRAM
 
 ### FIGURE 04 CIRCUIT DIAGRAM
 
+![image](https://user-images.githubusercontent.com/75235554/203466247-c3f2da2f-eaa9-461a-bb01-94fe69b7273e.png)
+
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
 2.	Connect the board to your computer via the USB cable.
@@ -67,14 +69,33 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```python
+ // C++ code
+#include<Servo.h>
 
+Servo myservo;
+int value;
+double angle;
 
+void setup()
+{
+  Serial.begin(9600);
+  myservo.attach(9);
+}
 
+void loop()
+{
+  value = analogRead(A0);
+  angle = map(value,0,1023,0,180);
+  Serial.println(angle);
+  myservo.write(angle);
+  delay(15);
+}
+```
 
+### OUTPUT :
 
-
-
+![image](https://user-images.githubusercontent.com/75235554/203466329-2b304e3d-464e-43ba-99c9-dfd7c071b114.png)
 
 
 ### RESULTS: 
